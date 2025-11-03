@@ -1,0 +1,507 @@
+/* GENEL AYARLAR VE RETRO FONT */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Piksel retro fontu */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* İçerik için okunaklı font */
+
+
+:root {
+    --main-bg: #E8E8E8; /* Açık griye yakın beyaz */
+    --window-bg: #FFFFFF; /* Pencere İçi Beyaz */
+    --border-dark: #333333; /* Koyu gri (kenarlıklar) */
+    --border-light: #BBBBBB; /* Orta gri (3D efekti için) */
+    --accent-primary: #8A2BE2; /* Mor (Ana vurgu) */
+    --accent-secondary: #FF8C00; /* Koyu Turuncu (İkincil vurgu) */
+    --header-bg: #CCCCCC; /* Pencere Başlık Çubuğu Gri */
+    --text-color: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    background: var(--main-bg);
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* TÜM İÇERİK KUTULARINA UYGULANACAK RETRO PENCERE STİLİ */
+.window {
+    background: var(--window-bg);
+    border-top: 3px solid var(--border-light);
+    border-left: 3px solid var(--border-light);
+    border-right: 3px solid var(--border-dark);
+    border-bottom: 3px solid var(--border-dark);
+    box-shadow: 6px 6px 0px 0px var(--border-dark); /* Derinlik veren gölge */
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* PENCERE BAŞLIK ÇUBUĞU */
+.window-title-bar {
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    margin: -20px -20px 20px -20px; /* Pencere içeriğinin üstüne yayılır */
+    border-bottom: 2px solid var(--border-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: default;
+}
+.window-title-bar .buttons span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: var(--header-bg);
+    border: 2px solid var(--border-dark);
+    box-shadow: 1px 1px 0px var(--border-light) inset, -1px -1px 0px var(--border-dark) inset;
+    text-align: center;
+    line-height: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.window-title-bar .buttons span:active {
+    box-shadow: 1px 1px 0px var(--border-dark) inset, -1px -1px 0px var(--border-light) inset;
+}
+
+
+/* BAŞLIK VE NAVİGASYON (HEADER) */
+#navbar {
+    background: var(--header-bg);
+    border-bottom: 3px solid var(--border-dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#navbar h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+#navbar nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: 2px solid transparent;
+    transition: all 0.1s;
+    font-family: 'VT323', monospace;
+    font-size: 1.1em;
+}
+
+#navbar nav a:hover {
+    background: var(--accent-primary);
+    color: var(--window-bg);
+    border-color: var(--border-dark);
+    text-shadow: 1px 1px var(--border-dark);
+}
+
+/* BÖLÜM ANA BAŞLIKLARI (h2) - Mor Retro Font */
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.8em;
+    color: var(--accent-primary);
+    text-align: left;
+    border-bottom: 3px dashed var(--accent-secondary); /* Turuncu çizgili alt */
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: var(--text-color);
+    font-size: 1.3em;
+    margin-bottom: 8px;
+}
+
+/* HERO/HAKKIMDA BÖLÜMÜ */
+#about {
+    padding: 50px 0;
+    text-align: center;
+    background-color: var(--main-bg);
+}
+
+#about .profile-info {
+    text-align: left;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* FOTOĞRAF STİLİ - YUVARLAK VE RETRO ÇERÇEVELİ */
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Yuvarlak yapar */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px;
+    border: 4px solid var(--accent-secondary); /* Turuncu çerçeve */
+    box-shadow: 5px 5px 0px var(--border-dark); /* Retro gölge */
+}
+
+.hero-links .btn {
+    background: var(--accent-secondary); /* Turuncu buton */
+    border: 3px solid var(--border-dark);
+    box-shadow: 3px 3px 0px var(--border-dark);
+    color: var(--window-bg);
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 20px;
+    transition: all 0.1s;
+    font-family: 'VT323', monospace;
+    font-size: 1.1em;
+}
+
+.hero-links .btn:hover {
+    background: var(--accent-primary); /* Mor hover */
+}
+
+.hero-links .btn:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+
+/* GENEL BÖLÜM STİLLERİ - HEPSİ .window SINIFI İÇİNDE OLACAK */
+section {
+    padding: 0; /* Window sınıfı zaten padding ve margin verecek */
+}
+
+/* ZAMAN ÇİZELGESİ (BACKGROUND) - RETRO KUTU STİLİ */
+.timeline {
+    border: 2px solid var(--header-bg);
+    padding: 10px;
+    background: var(--main-bg); 
+    box-shadow: inset 2px 2px 0px var(--border-light), inset -2px -2px 0px var(--border-dark);
+}
+
+/* BÖLÜM ALT BAŞLIKLARI (EDUCATION, WORK EXPERIENCE, VOLUNTEER...) - Mor Retro Font */
+.timeline h3 {
+    font-family: 'Press Start 2P', cursive; /* Retro font */
+    font-weight: 700; 
+    font-size: 1em; 
+    color: var(--accent-primary); /* Mor */
+    padding: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 3px dashed var(--accent-secondary); /* Turuncu çizgili alt */
+}
+
+/* KURUM/POZİSYON ADI BAŞLIKLARI (H3 etiketi) - Mor Retro Font */
+.timeline-item h3 {
+    color: var(--accent-primary);
+    text-decoration: underline;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+    border-bottom: none;
+}
+
+/* EĞİTİM DERECESİ (h4 etiketi) - Mor Retro Font */
+.timeline-item h4 {
+    color: var(--accent-primary); /* Mor renk */
+    font-weight: normal;
+    font-family: 'Press Start 2P', cursive; /* Retro font */
+    font-size: 0.8em; /* Küçük boyut */
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Diğer zaman çizelgesi elementleri */
+.timeline-item {
+    padding: 15px 0;
+    border-bottom: 1px dashed var(--border-light);
+}
+.timeline-item:last-child {
+    border-bottom: none;
+}
+.timeline-item .date {
+    display: block;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-family: 'VT323', monospace;
+    font-size: 1em;
+}
+.timeline-item ul {
+    list-style-type: '► '; 
+    margin-left: 20px;
+    font-size: 0.9em;
+}
+.timeline-item .location {
+    font-family: 'VT323', monospace;
+    font-size: 0.9em;
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+/* PROJELER BÖLÜMÜ */
+#projects .container {
+    padding-top: 50px;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--window-bg);
+    border-top: 3px solid var(--border-light);
+    border-left: 3px solid var(--border-light);
+    border-right: 3px solid var(--border-dark);
+    border-bottom: 3px solid var(--border-dark);
+    padding: 15px;
+    box-shadow: 4px 4px 0px var(--border-dark);
+    transition: all 0.1s;
+}
+.project-card:active {
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}
+
+.project-card h3 a {
+    color: var(--accent-primary);
+    text-decoration: underline;
+    font-size: 1.1em;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.tech-stack {
+    color: var(--accent-secondary);
+    font-weight: bold;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+    font-family: 'VT323', monospace;
+}
+.project-card p {
+    font-size: 0.9em;
+}
+
+/* YETENEKLER BÖLÜMÜ */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.skill-group {
+    background: var(--header-bg);
+    padding: 15px;
+    border-top: 2px solid var(--border-light);
+    border-left: 2px solid var(--border-light);
+    border-right: 2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-dark);
+    box-shadow: inset 1px 1px 0px var(--border-light), 
+                inset -1px -1px 0px var(--border-dark); /* İç gölge efekti */
+}
+
+.skill-group h3 {
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-dark);
+    padding-bottom: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+}
+.skill-group i {
+    margin-right: 5px;
+    color: var(--accent-secondary);
+}
+.skill-group p {
+    font-family: 'VT323', monospace;
+    font-size: 0.95em;
+    margin-top: 10px;
+}
+
+/* İLETİŞİM BÖLÜMÜ (FOOTER) */
+#contact {
+    background: var(--header-bg);
+    border-top: 3px solid var(--border-dark);
+    padding: 30px 0 10px;
+    text-align: center;
+}
+
+#contact h2 {
+    color: var(--text-color);
+    text-align: center;
+    border-bottom: none;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    background: var(--window-bg);
+    border-top: 2px solid var(--border-light);
+    border-left: 2px solid var(--border-light);
+    border-right: 2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-dark);
+    padding: 15px;
+    box-shadow: 4px 4px 0px var(--border-dark);
+}
+
+.contact-info p {
+    margin: 5px 0;
+    text-align: left;
+    color: var(--text-color);
+    font-family: 'VT323', monospace;
+    font-size: 1.1em;
+}
+
+.contact-info i {
+    color: var(--accent-secondary);
+    margin-right: 10px;
+}
+
+.contact-info a {
+    color: var(--accent-primary);
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-dark);
+    font-size: 0.8em;
+    color: var(--text-color);
+}
+
+/* MOBİL UYUMLULUK */
+@media (max-width: 768px) {
+    #navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #navbar nav {
+        margin-top: 10px;
+    }
+    #navbar nav a {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 5px;
+        border: 1px solid var(--border-dark);
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .window-title-bar {
+        font-size: 0.8em;
+    }
+}
+
+/* DİL DEĞİŞTİRME TUŞU STİLİ */
+.lang-btn {
+    background: var(--accent-secondary); /* Turuncu renk */
+    border: 3px solid var(--border-dark);
+    box-shadow: 3px 3px 0px var(--border-dark);
+    color: var(--window-bg);
+    padding: 5px 10px;
+    margin-left: 20px; /* Navigasyon linklerinden ayırma */
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8em;
+    transition: all 0.1s;
+    outline: none;
+}
+
+.lang-btn:hover {
+    background: var(--accent-primary); /* Mor hover */
+}
+
+.lang-btn:active {
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}
+
+/* MOBİL UYUMLULUK: Dil tuşunu sağ üste hizala */
+@media (max-width: 768px) {
+    #navbar nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .lang-btn {
+        order: -1; /* En başa (sağ üste) taşır */
+        margin-left: auto; /* Navigasyon kutusunun sağına iter */
+        margin-right: 10px;
+    }
+}
+
+/* GO UP BUTONU STİLİ */
+#go-up-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent-secondary); /* Turuncu renk */
+    color: var(--window-bg); /* Beyaz ikon */
+    border: 3px solid var(--border-dark);
+    box-shadow: 3px 3px 0px var(--border-dark);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: none; /* JS ile görünür olacak */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    z-index: 1000;
+    transition: all 0.1s;
+}
+
+#go-up-btn:hover {
+    background: var(--accent-primary); /* Mor hover */
+}
+
+#go-up-btn:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+/* TÜM LİNKLER İÇİN GENEL STİL */
+a {
+    color: var(--accent-primary); /* Normal link rengini Mor yapar */
+    text-decoration: none; /* Alt çizgiyi kaldırır, alt çizgi sadece hover'da veya özel başlıklarda olacak */
+}
+
+a:visited {
+    color: var(--accent-primary); /* Ziyaret edilmiş linkin de Mor kalmasını sağlar */
+}
+
+a:hover {
+    color: #5d17a3; /* Hafif koyu mor hover rengi */
+    text-decoration: underline; /* Hover'da alt çizgi ekler */
+}
+
+/* ZAMAN ÇİZELGESİNDEKİ LİNKLER (Sertifika/Kurum Adları) */
+/* Bu kısım zaten retro stili için özel ayarlanmış, rengi korur */
+.timeline-item h3 a {
+    color: var(--accent-primary);
+    text-decoration: underline;
+}
