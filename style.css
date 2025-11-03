@@ -506,119 +506,95 @@ a:hover {
     text-decoration: underline;
 }
 /* ========================================================================= */
-/* @MEDIA QUERIES (MOBİL UYUMLULUK) */
+/* @MEDIA QUERIES (MOBİL UYUMLULUK) - NİHAİ DÜZELTMELER */
 /* ========================================================================= */
 
 @media (max-width: 900px) {
-    /* Genel Ayarlamalar: Kenar boşluklarını azaltma */
+    /* Genel Ayarlamalar */
     .container {
         width: 95%;
     }
     .window {
         margin: 20px auto;
         padding: 15px;
+        box-shadow: 4px 4px 0px 0px var(--border-dark);
     }
     
-    /* PENCERE BAŞLIK ÇUBUĞU (Window Title Bar) */
-    .window-title-bar {
-        font-size: 0.8em;
-        padding: 5px 10px;
-        /* Negatif marjları azaltıyoruz */
-        margin: -15px -15px 15px -15px; 
-    }
-
-    /* NAVİGASYON (HEADER) */
+    /* NAVİGASYON (HEADER) DÜZELTMESİ */
     #navbar .container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        padding: 10px 0;
     }
     #navbar h1 {
         font-size: 1.1em;
         margin-bottom: 5px;
     }
     #navbar nav {
+        /* Yatay taşmayı engellemek için linkleri iki satıra yay */
         display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
+        flex-wrap: wrap; 
+        justify-content: center; 
         width: 100%;
-        margin-top: 10px;
-    }
-    .lang-btn {
-        order: -1; /* Dil tuşunu sağ üste taşır */
-        margin-left: auto;
-        margin-right: 0;
-        font-size: 0.7em;
+        margin-top: 5px;
+        padding: 0 5px; /* Kenarlardan biraz boşluk */
     }
     #navbar nav a {
-        padding: 5px 8px;
-        margin-left: 0;
-        font-size: 1em;
+        font-size: 0.8em; /* Link fontunu DAHA ÇOK küçült */
+        padding: 5px 4px; /* Buton iç boşluğunu azalt */
+        margin: 2px;
+        flex-grow: 1; 
+        min-width: 70px; /* Her linkin en az bu genişlikte olmasını sağla */
+        text-align: center;
+    }
+    .lang-btn {
+        order: -1; 
+        margin: 5px 0 5px 0;
+        font-size: 0.7em;
+        width: 95%; /* Telefon ekranında neredeyse tam genişlikte buton */
     }
 
     /* BÖLÜM ANA BAŞLIKLARI (h2) */
     h2 {
-        font-size: 1.5em;
-        margin-bottom: 20px;
+        font-size: 1.3em; 
+        margin-bottom: 15px;
         padding-bottom: 8px;
     }
-
-    /* HAKKIMDA BÖLÜMÜ */
-    .profile-pic {
-        width: 150px;
-        height: 150px;
-    }
-    .hero-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .hero-links .btn {
-        font-size: 1em;
-        padding: 8px 12px;
-        margin: 5px;
-    }
-
-    /* ZAMAN ÇİZELGESİ (DENEYİM & EĞİTİM) */
-    .timeline {
-        padding: 5px;
-    }
-    /* Kurum/Pozisyon Başlıklarını Küçültme */
-    .timeline-item h3 {
-        font-size: 0.85em; 
-    }
-    /* Alt Bilgi Başlıklarını Küçültme (EDUCATION, WORK EXPERIENCE, vb.) */
-    .timeline h3 {
-        font-size: 0.95em;
-        margin-top: 10px;
-    }
-    .timeline-item ul {
-        margin-left: 15px;
-    }
-    .timeline-item ul li {
-        font-size: 0.8em; /* Liste maddelerini daha okunur hale getirir */
-    }
-    .timeline-item .date {
-        font-size: 0.8em;
-    }
     
-    /* PROJELER BÖLÜMÜ */
-    .projects-grid {
-        grid-template-columns: 1fr; /* Tek sütuna düşürür */
-        gap: 20px;
-    }
-    .project-card h3 a {
-        font-size: 1em;
-    }
-
-    /* YETENEKLER BÖLÜMÜ */
+    /* YETENEKLER BÖLÜMÜ DÜZELTMESİ (Ekran Görüntüsü 1'deki ana sorun) */
     .skills-list {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Daha dar kutular */
+        grid-template-columns: 1fr 1fr; /* Her satırda 2 kart */
+        gap: 10px; /* Boşlukları azalt */
     }
+    /* Yetenekler kartlarındaki H3 başlıklarını DARALTMA */
     .skill-group h3 {
-        font-size: 0.9em;
+        font-size: 0.7em; /* Çok küçük font boyutu (sığması için zorunlu) */
+        line-height: 1.1; 
+        padding-bottom: 3px;
+    }
+    .skill-group i {
+        font-size: 1.1em; /* İkonu küçültme */
     }
     .skill-group p {
-        font-size: 0.8em;
+        font-size: 0.75em;
+    }
+
+    /* DENEYİM & EĞİTİM BAŞLIKLARI */
+    .timeline-item h3 {
+        font-size: 0.8em; 
+    }
+    .timeline-item ul li, .timeline-item p {
+        font-size: 0.8em; 
+    }
+    
+    /* PENCERE BAŞLIK ÇUBUĞU */
+    .window-title-bar {
+        font-size: 0.7em;
+    }
+    .window-title-bar .buttons span {
+        width: 12px;
+        height: 12px;
+        line-height: 8px;
     }
     
     /* GO UP BUTONU */
@@ -628,5 +604,11 @@ a:hover {
         font-size: 1.2em;
         bottom: 10px;
         right: 10px;
+    }
+    
+    /* DUYURU KUTUSU */
+    .announcement-box {
+        font-size: 0.9em;
+        padding: 10px 15px;
     }
 }
