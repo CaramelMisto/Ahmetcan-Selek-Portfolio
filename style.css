@@ -505,3 +505,128 @@ a:hover {
     color: var(--accent-primary);
     text-decoration: underline;
 }
+/* ========================================================================= */
+/* @MEDIA QUERIES (MOBİL UYUMLULUK) */
+/* ========================================================================= */
+
+@media (max-width: 900px) {
+    /* Genel Ayarlamalar: Kenar boşluklarını azaltma */
+    .container {
+        width: 95%;
+    }
+    .window {
+        margin: 20px auto;
+        padding: 15px;
+    }
+    
+    /* PENCERE BAŞLIK ÇUBUĞU (Window Title Bar) */
+    .window-title-bar {
+        font-size: 0.8em;
+        padding: 5px 10px;
+        /* Negatif marjları azaltıyoruz */
+        margin: -15px -15px 15px -15px; 
+    }
+
+    /* NAVİGASYON (HEADER) */
+    #navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #navbar h1 {
+        font-size: 1.1em;
+        margin-bottom: 5px;
+    }
+    #navbar nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .lang-btn {
+        order: -1; /* Dil tuşunu sağ üste taşır */
+        margin-left: auto;
+        margin-right: 0;
+        font-size: 0.7em;
+    }
+    #navbar nav a {
+        padding: 5px 8px;
+        margin-left: 0;
+        font-size: 1em;
+    }
+
+    /* BÖLÜM ANA BAŞLIKLARI (h2) */
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+    }
+
+    /* HAKKIMDA BÖLÜMÜ */
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+    .hero-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero-links .btn {
+        font-size: 1em;
+        padding: 8px 12px;
+        margin: 5px;
+    }
+
+    /* ZAMAN ÇİZELGESİ (DENEYİM & EĞİTİM) */
+    .timeline {
+        padding: 5px;
+    }
+    /* Kurum/Pozisyon Başlıklarını Küçültme */
+    .timeline-item h3 {
+        font-size: 0.85em; 
+    }
+    /* Alt Bilgi Başlıklarını Küçültme (EDUCATION, WORK EXPERIENCE, vb.) */
+    .timeline h3 {
+        font-size: 0.95em;
+        margin-top: 10px;
+    }
+    .timeline-item ul {
+        margin-left: 15px;
+    }
+    .timeline-item ul li {
+        font-size: 0.8em; /* Liste maddelerini daha okunur hale getirir */
+    }
+    .timeline-item .date {
+        font-size: 0.8em;
+    }
+    
+    /* PROJELER BÖLÜMÜ */
+    .projects-grid {
+        grid-template-columns: 1fr; /* Tek sütuna düşürür */
+        gap: 20px;
+    }
+    .project-card h3 a {
+        font-size: 1em;
+    }
+
+    /* YETENEKLER BÖLÜMÜ */
+    .skills-list {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Daha dar kutular */
+    }
+    .skill-group h3 {
+        font-size: 0.9em;
+    }
+    .skill-group p {
+        font-size: 0.8em;
+    }
+    
+    /* GO UP BUTONU */
+    #go-up-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+        bottom: 10px;
+        right: 10px;
+    }
+}
